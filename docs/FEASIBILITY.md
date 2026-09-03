@@ -1,0 +1,82 @@
+# MediEvil II feasibility binding
+
+## Identity
+
+- Title and region: MediEvil II, USA.
+- Serial: SCUS-94564.
+- Source executable path: `disc/SCUS_945.64`.
+- Load address: `0x801B0000`.
+- Entry point: `0x801B5220`.
+- Source disc binding: `disc/MediEvil II (USA).cue`.
+
+The source `game.toml` confirms these values. This preparation did not read or
+copy retail content.
+
+## Current evidence
+
+The clean source commit is `ef15b4c3952af75a328fb3a2027e92879c7d0988`. It uses PSXRecomp
+`eecf3b2a4ee3148f01f8f92b512930fd6307d82e` and recomp-ui `87bbf43c419c16b97bf433a84d600969159e2e84`. The source
+contains 199 non-comment seed rows.
+
+The current portfolio package records an automated build, audit, launcher
+marker check, and startup smoke result. That receipt is build and startup
+evidence only. It does not prove full-game correctness.
+
+The current public topology is the aggregate Wave 1 `v0.2.3` kit. This title
+does not have a public standalone repository.
+
+## Refresh result
+
+No refresh build ran. The exact next workbench source is not selected. Upstream
+`master` is untagged and diverges from the accepted portfolio source. This
+preparation does not change the runtime pin, UI pin, or title version.
+
+## Track recommendation
+
+Keep the recompilation track. The existing source and package receipts support
+continued package work. They do not establish an enhanced or full-quality
+state.
+
+Widescreen, high-frame-rate simulation, and new input work are outside this
+refresh. Review them only after the exact base passes the title gates.
+
+## Smallest decisive next steps
+
+1. Select one exact accepted PSXRecomp source.
+2. Test the setup-marker fail-closed contract on that source.
+3. Build this title in this isolated preparation branch.
+4. Record exact Windows, Linux, and macOS package identities.
+5. Ask Alex to test the exact packages.
+6. Assign a release version only after the version gate passes.
+
+## Evidence
+
+- Source `game.toml`, `catalog_identity.json`, `VERSION`, and Git submodule
+  entries at `ef15b4c3952af75a328fb3a2027e92879c7d0988`.
+- Portfolio `medievil-ii/BUILDINFO.json`.
+- Portfolio `medievil-ii/RECEIPT.md`.
+- Portfolio `_runs/knowledge/reviews/2026-09-01-upstream-refresh-audit.md`.
+- Portfolio `_runs/knowledge/reviews/2026-09-01-release-waves-refresh-preparation.md`.
+
+## 2026-09-03 refresh correction
+
+The prepared source had only the merged 483,874,608-byte BIN identity. The
+candidate now also accepts canonical Track 01: 450,885,456 bytes, MD5
+`a4bd203f3a59fa92a64c176774919293`, SHA-1
+`017b855353abd86c22aa516690e852b641e4fa71`, and CRC32 `9ba3ab69`.
+`disc_probe.json` and `catalog_identity.json` now name the canonical CUE and
+Track 01. The merged identity remains as an explicit compatibility entry in
+`game.toml`. This is a source correction. No new package has passed yet.
+
+## 2026-09-03 three-platform candidate
+
+The `v0.1.1` candidate uses public package-only framework child
+`e081d29da2fa9862204f63e6b2004d76f1d0cb2d`. Its exact parent is the previously qualified Wave 1 source
+`eecf3b2a4ee3148f01f8f92b512930fd6307d82e`. The child removes two non-SDK helpers with private paths
+from setup packages. It does not change runtime, recompiler, BIOS, UI, or title
+behavior.
+
+The candidate targets Windows x64, Linux x64, macOS ARM64, and macOS x64. It
+requires an owned regional retail BIOS and does not ship OpenBIOS. Build-only
+CI, complete archive audit, native package tests, an exact release manifest,
+and final R4 authorization remain required. No `v0.1.1` release exists.

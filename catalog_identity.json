@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "MediEvil II",
+    "id": "SCUS-94564",
+    "boot_exe": "SCUS_945.64"
+  },
+  "marketing": {
+    "description": "MediEvil II recompiled for modern systems using psxrecomp.",
+    "publisher": "Sony",
+    "year": "2000",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "MediEvil II (USA).cue",
+    "bin_name": "MediEvil II (USA) (Track 1).bin",
+    "track_counts": [
+      2
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 450885456,
+      "md5": "a4bd203f3a59fa92a64c176774919293",
+      "sha1": "017b855353abd86c22aa516690e852b641e4fa71",
+      "crc32": "9ba3ab69"
+    },
+    "disc_fp": "23128d94abe920f2606b3b8a64ae81cd7d1550b367972703a789317da31b3029"
+  },
+  "exe": {
+    "load_address": "0x801B0000",
+    "entry_pc": "0x801B5220",
+    "text_size": "0x00023800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 199,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
